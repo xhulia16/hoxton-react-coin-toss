@@ -2,23 +2,23 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
-  const [tail, setTail]=useState(false)
+  const [coin, setCoin]=useState("")
 
   return (
     <div className="App">
     <button 
     onClick={()=>{
       if(Math.random()>0.5){
-        setTail(true)
+        setCoin("HEAD")
       }
       else{
-        setTail(false)
+        setCoin("TAIL")
       }
     }}
     className="button">
       FLIP COIN</button>
 
-{tail ? <h1>RESULT: TAIL</h1> : <h1>RESULT: HEAD</h1>}
+{coin===""? <h1>RESULT: </h1> : <h1>RESULT: {coin}</h1>}
 
     </div>
   )
